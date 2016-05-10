@@ -2,14 +2,12 @@
 
 # files to ignore
 IGNORE_FILES=*default*
-# file name for icon launcher
-FILE_IC_LAUNHCER=ic_launcher*
-# out directory
-OUT_PATH=./output
 # input standard extension
 INPUT_EXT=.svg
 # output standard extension
 OUTPUT_EXT=.png
+# file name for icon launcher
+FILE_IC_LAUNHCER=ic_launcher${INPUT_EXT}
 
 # ------------------------------------------------------------------------
 #
@@ -30,20 +28,33 @@ OUTPUT_EXT=.png
 # limitations under the License.
 # ------------------------------------------------------------------------
 
+# Input arguments
+
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 <inputFolder> <outputFolder>"
+    echo ""
+    echo "Only SVG files in <inputFolder>16dp/ <inputFolder>24dp/ <inputFolder>32dp/ and <inputFolder>48dp/ folders will be rastered."
+    echo "If $FILE_IC_LAUNHCER is in folder <inputFolder>48dp/ , image <inputFolder>ic_launcher_web${OUTPUT_EXT} with 512*512 resolution is created in <inputFolder>."
+    exit 1
+fi
+
+input=$1/
+output=$2/
+
 # see https://inkscape.org/fr/doc/inkscape-man.html
 # Function to generate vector image to raster image
 raster() {
 	IN_FILE=$1 # path in file (vector image)
 	OUT_FILE=$2 # path out file (raster image)
 	SIZE=$3 # size of raster image
-	inkscape -z -f $IN_FILE -e ${OUT_FILE} -D -w $SIZE -h $SIZE
+	inkscape -z -f $IN_FILE -e ${OUT_FILE} -C -w $SIZE -h $SIZE
 }
 
 # resolutions for different sizes of icons
 for r in 16 24 32 48
 do
 	# verify input directory
-	resDirectory=${r}dp
+	resDirectory=${input}${r}dp
 	if [ ! -d "$resDirectory" ]; then
 	  	# control if directory of each resolution exists
 		continue
@@ -63,20 +74,20 @@ do
 		resDP=_${r}dp
 
 		# Launcher icons
-		if [ "$r" -eq  48 ] && [[ $(basename "$f") =~ ${FILE_IC_LAUNCHER} ]]; then
+		if [ "$r" -eq  48 ] && [[ $(basename "$f") = ${FILE_IC_LAUNCHER} ]]; then
 			sufixOutDir=mipmap
 			resDP=""
-			render $f ${OUT_PATH}/ic_launcher_web${OUTPUT_EXT} 512 # Web
+			raster $f ${output}ic_launcher_web${OUTPUT_EXT} 512 # Web
 		fi
 
 		if [[ $(basename "$f") != ${IGNORE_FILES} ]]; then
 			# define each out directory
-			ldpiOutDir=${OUT_PATH}/${sufixOutDir}-ldpi
-			mdpiOutDir=${OUT_PATH}/${sufixOutDir}-mdpi
-			hdpiOutDir=${OUT_PATH}/${sufixOutDir}-hdpi
-			xhdpiOutDir=${OUT_PATH}/${sufixOutDir}-xhdpi
-			xxhdpiOutDir=${OUT_PATH}/${sufixOutDir}-xxhdpi
-			xxxhdpiOutDir=${OUT_PATH}/${sufixOutDir}-xxxhdpi
+			ldpiOutDir=${output}${sufixOutDir}-ldpi
+			mdpiOutDir=${output}${sufixOutDir}-mdpi
+			hdpiOutDir=${output}${sufixOutDir}-hdpi
+			xhdpiOutDir=${output}${sufixOutDir}-xhdpi
+			xxhdpiOutDir=${output}${sufixOutDir}-xxhdpi
+			xxxhdpiOutDir=${output}${sufixOutDir}-xxxhdpi
 			# create directory
 			mkdir -p ${ldpiOutDir}
 			mkdir -p ${mdpiOutDir}
@@ -87,7 +98,7 @@ do
 			# define out file
 
 			outfile=${PREFIX_ICON}$(basename "$f" ${INPUT_EXT})${resDP}${OUTPUT_EXT}
-			echo "Create drawables for contextual icon : $f"
+			echo "Create drawables for icon : $f"
 			raster $f ${ldpiOutDir}/${outfile} ${ldpiRes}
 			raster $f ${mdpiOutDir}/${outfile} $r
 			raster $f ${hdpiOutDir}/${outfile} ${hdpiRes}
