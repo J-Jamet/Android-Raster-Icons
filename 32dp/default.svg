@@ -27,17 +27,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="22.395604"
-     inkscape:cx="6.1522826"
-     inkscape:cy="14.801892"
+     inkscape:zoom="11.197802"
+     inkscape:cx="11.193977"
+     inkscape:cy="22.977286"
      inkscape:current-layer="g4770"
      showgrid="true"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
      inkscape:window-width="1920"
-     inkscape:window-height="1016"
+     inkscape:window-height="1148"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="34"
      inkscape:window-maximized="1">
     <sodipodi:guide
        position="3.9999947,27.999999"
@@ -80,17 +80,48 @@
        transform="matrix(1.7777778,0,0,1.7777778,-205.48441,-31.997877)">
       <g
          id="g2997" />
+      <rect
+         style="opacity:1;fill:#d73f4a;fill-opacity:1;stroke:none;stroke-width:0.109;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4142"
+         width="13.5"
+         height="13.5"
+         x="117.83498"
+         y="20.248806" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:1.70914185px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-         x="124.62895"
-         y="26.929041"
+         style="font-style:normal;font-weight:normal;font-size:1.70914185px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
+         x="124.55791"
+         y="22.411634"
          id="text4585-1"
          sodipodi:linespacing="125%"><tspan
            sodipodi:role="line"
-           x="124.62895"
-           y="26.929041"
+           x="124.55791"
+           y="22.411634"
            id="tspan4589-6">ActionBar Icon</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.86409092px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="119.48958"
+         y="31.072205"
+         id="text4154"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4156"
+           x="119.48958"
+           y="31.072205"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Medium';fill:#ffffff;fill-opacity:1">J</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.38750839px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="125.32296"
+         y="29.999353"
+         id="text4154-0"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4156-4"
+           x="125.32296"
+           y="29.999353"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Medium';fill:#ffffff;fill-opacity:1">J</tspan></text>
     </g>
   </g>
 </svg>

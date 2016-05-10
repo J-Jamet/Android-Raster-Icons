@@ -27,17 +27,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="31.672167"
-     inkscape:cx="1.5515326"
-     inkscape:cy="7.133396"
+     inkscape:zoom="22.395604"
+     inkscape:cx="9.199432"
+     inkscape:cy="5.9412034"
      inkscape:current-layer="g4770"
      showgrid="true"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
      inkscape:window-width="1920"
-     inkscape:window-height="1016"
+     inkscape:window-height="1148"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="34"
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
@@ -63,16 +63,47 @@
     <g
        id="g4770"
        transform="matrix(1.7777778,0,0,1.7777778,-205.48441,-31.997877)">
+      <rect
+         style="opacity:1;fill:#db79d1;fill-opacity:1;stroke:none;stroke-width:0.109;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4142"
+         width="9"
+         height="9"
+         x="115.58498"
+         y="26.998806" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:1.04139924px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
-         x="120.14642"
-         y="31.821283"
+         style="font-style:normal;font-weight:normal;font-size:7.2427268px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="116.68805"
+         y="34.214401"
+         id="text4154"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4156"
+           x="116.68805"
+           y="34.214401"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Medium';fill:#ffffff;fill-opacity:1">J</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.92500544px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="120.57697"
+         y="33.499172"
+         id="text4154-0"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4156-4"
+           x="120.57697"
+           y="33.499172"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Medium';fill:#ffffff;fill-opacity:1">J</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:1.04139924px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
+         x="120.12866"
+         y="28.609756"
          id="text4585-1"
          sodipodi:linespacing="125%"><tspan
            sodipodi:role="line"
-           x="120.14642"
-           y="31.821283"
+           x="120.12866"
+           y="28.609756"
            id="tspan4589-6">Contextual Icon</tspan></text>
     </g>
   </g>
