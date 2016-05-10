@@ -2,6 +2,8 @@
 
 Convert SVG Inkscape custom icons of Android App in each raster image with right resolution.
 
+![preview](https://raw.githubusercontent.com/J-Jamet/Android_Icons_Rasterer/master/previewIcons.jpg)
+
 ## Usage
 
 [Inkscape](https://inkscape.org/fr/) must be installed.
