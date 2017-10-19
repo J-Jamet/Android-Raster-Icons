@@ -7,7 +7,8 @@ INPUT_EXT=.svg
 # output standard extension
 OUTPUT_EXT=.png
 # file name for icon launcher
-FILE_IC_LAUNHCER=ic_launcher${INPUT_EXT}
+FILE_IC_LAUNCHER=ic_launcher${INPUT_EXT}
+FILE_IC_LAUNCHER_ROUND=ic_launcher_round${INPUT_EXT}
 
 # ------------------------------------------------------------------------
 #
@@ -33,8 +34,8 @@ FILE_IC_LAUNHCER=ic_launcher${INPUT_EXT}
 if [ $# -lt 2 ]; then
     echo "Usage: $0 <inputFolder> <outputFolder>"
     echo ""
-    echo "Only SVG files in <inputFolder>16dp/ <inputFolder>24dp/ <inputFolder>32dp/ and <inputFolder>48dp/ folders will be rastered."
-    echo "If $FILE_IC_LAUNHCER is in folder <inputFolder>48dp/ , image <inputFolder>ic_launcher_web${OUTPUT_EXT} with 512*512 resolution is created in <inputFolder>."
+    echo "Only SVG files in <inputFolder>/16dp/ <inputFolder>/24dp/ <inputFolder>/32dp/ and <inputFolder>/48dp/ folders will be rastered."
+    echo "If $FILE_IC_LAUNCHER or $FILE_IC_LAUNCHER_ROUND is in folder <inputFolder>/48dp/ , image <inputFolder>/ic_launcher_web${OUTPUT_EXT} with 512*512 resolution is created in <inputFolder>."
     exit 1
 fi
 
@@ -47,7 +48,8 @@ raster() {
 	IN_FILE=$1 # path in file (vector image)
 	OUT_FILE=$2 # path out file (raster image)
 	SIZE=$3 # size of raster image
-	inkscape -z -f $IN_FILE -e ${OUT_FILE} -C -w $SIZE -h $SIZE
+	DPI=$4 # resolution of image
+	inkscape -z -f $IN_FILE -e ${OUT_FILE} -C -w $SIZE -h $SIZE -d $DPI
 }
 
 # resolutions for different sizes of icons
@@ -72,14 +74,19 @@ do
 		# Contextual Icons / Notification icons / Action bar icons
 		sufixOutDir=drawable
 		resDP=_${r}dp
-
+		
 		# Launcher icons
+		if [ "$r" -eq  48 ] && [[ $(basename "$f") = ${FILE_IC_LAUNCHER_ROUND} ]]; then
+			sufixOutDir=mipmap
+			resDP=""
+			raster $f ${output}ic_launcher_round_web${OUTPUT_EXT} 512 # Round icon for Web
+		fi
 		if [ "$r" -eq  48 ] && [[ $(basename "$f") = ${FILE_IC_LAUNCHER} ]]; then
 			sufixOutDir=mipmap
 			resDP=""
-			raster $f ${output}ic_launcher_web${OUTPUT_EXT} 512 # Web
+			raster $f ${output}ic_launcher_web${OUTPUT_EXT} 512 # Icon for Web
 		fi
-
+		
 		if [[ $(basename "$f") != ${IGNORE_FILES} ]]; then
 			# define each out directory
 			ldpiOutDir=${output}${sufixOutDir}-ldpi
@@ -99,12 +106,12 @@ do
 
 			outfile=${PREFIX_ICON}$(basename "$f" ${INPUT_EXT})${resDP}${OUTPUT_EXT}
 			echo "Create drawables for icon : $f"
-			raster $f ${ldpiOutDir}/${outfile} ${ldpiRes}
-			raster $f ${mdpiOutDir}/${outfile} $r
-			raster $f ${hdpiOutDir}/${outfile} ${hdpiRes}
-			raster $f ${xhdpiOutDir}/${outfile} ${xhdpiRes}
-			raster $f ${xxhdpiOutDir}/${outfile} ${xxhdpiRes}
-			raster $f ${xxxhdpiOutDir}/${outfile} ${xxxhdpiRes}
+			raster $f ${ldpiOutDir}/${outfile} ${ldpiRes} 80
+			raster $f ${mdpiOutDir}/${outfile} $r 160
+			raster $f ${hdpiOutDir}/${outfile} ${hdpiRes} 240
+			raster $f ${xhdpiOutDir}/${outfile} ${xhdpiRes} 320
+			raster $f ${xxhdpiOutDir}/${outfile} ${xxhdpiRes} 480
+			raster $f ${xxxhdpiOutDir}/${outfile} ${xxxhdpiRes} 640
 		fi
 	done
 done
