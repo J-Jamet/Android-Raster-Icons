@@ -1,15 +1,15 @@
-# Android Icons Rasterer
+# Android Raster Icons
 
 Convert SVG Inkscape custom icons of Android App in each raster image with right resolution.
 
-![preview](https://raw.githubusercontent.com/J-Jamet/Android_Icons_Rasterer/master/previewIcons.jpg)
+![preview](https://raw.githubusercontent.com/J-Jamet/Android-Raster-Icons/master/previewIcons.jpg)
 
 ## Usage
 
 [Inkscape](https://inkscape.org/fr/) must be installed.
 
 ```
-./Android_Icons_Rasterer.sh <inputFolder> <outputFolder>
+./AndroidRasterIcons.sh <inputFolder> <outputFolder>
 ```
 
 Only SVG files in **inputFolder/16dp/** , **inputFolder/24dp/** , **inputFolder/32dp/** , and **inputFolder/48dp/** will be rastered.
@@ -19,7 +19,7 @@ If **ic_launcher.svg** is in folder **inputFolder/48dp/** , image **inputFolder/
 ## Example
 ```
 # Create phone svg icon with inkscape, place in ./inputFolder/32dp/ic_phone.svg and launch script
-./Android_Icons_Rasterer.sh ./inputFolder ./outputFolder
+./AndroidRasterIcons.sh ./inputFolder ./outputFolder
 
 # ./inputFolder/32dp/ic_phone.svg -> ./outputFolder/drawable-ldpi/ic_phone_32dp.png
 #                                 -> ./outputFolder/drawable-mdpi/ic_phone_32dp.png
