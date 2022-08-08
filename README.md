@@ -24,7 +24,7 @@ Build and convert SVG Inkscape custom icons of Android App in each raster image 
 
 Only SVG files in **inputFolder/16dp/** , **inputFolder/24dp/** , **inputFolder/32dp/** , and **inputFolder/48dp/** will be rastered.
 
-If **ic_launcher.svg** is in folder **inputFolder/48dp/** , image **inputFolder/ic_launcher_web.png** with 512x512 resolution is created in **inputFolder/** .
+If **ic_launcher.svg** is in folder **inputFolder/48dp/** , image **outputFolder/ic_launcher_web.png** with 512x512 resolution is created in **outputFolder/** .
 
 ## Example
 ```

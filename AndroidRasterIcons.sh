@@ -49,7 +49,7 @@ raster() {
 	OUT_FILE=$2 # path out file (raster image)
 	SIZE=$3 # size of raster image
 	DPI=$4 # resolution of image
-	inkscape -z -f $IN_FILE -e ${OUT_FILE} -C -w $SIZE -h $SIZE -d $DPI
+	inkscape --export-filename="${OUT_FILE}" -C -w $SIZE -h $SIZE -d $DPI $IN_FILE
 }
 
 # resolutions for different sizes of icons
@@ -79,12 +79,12 @@ do
 		if [ "$r" -eq  48 ] && [[ $(basename "$f") = ${FILE_IC_LAUNCHER_ROUND} ]]; then
 			sufixOutDir=mipmap
 			resDP=""
-			raster $f ${output}ic_launcher_round_web${OUTPUT_EXT} 512 # Round icon for Web
+			raster $f ${output}ic_launcher_round_web${OUTPUT_EXT} 512 160 # Round icon for Web
 		fi
 		if [ "$r" -eq  48 ] && [[ $(basename "$f") = ${FILE_IC_LAUNCHER} ]]; then
 			sufixOutDir=mipmap
 			resDP=""
-			raster $f ${output}ic_launcher_web${OUTPUT_EXT} 512 # Icon for Web
+			raster $f ${output}ic_launcher_web${OUTPUT_EXT} 512 160 # Icon for Web
 		fi
 		
 		if [[ $(basename "$f") != ${IGNORE_FILES} ]]; then
